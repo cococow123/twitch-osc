@@ -30,7 +30,6 @@ def loadSettings():
         with open('config.json', "r") as infile:
             config = json.load(infile)
             infile.close()
-            print(config)
 
 # -   SAVE SETTINGS
 
