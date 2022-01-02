@@ -2,6 +2,8 @@
 
 ## Convert twitch chat to OSC commands
 
-Run twitch-osc.py
-Make changes to the config.json
-Run again
+1. Run twitch-osc.py
+2. Make changes to the config.json
+3. Run again
+4. ???
+5. Profit
