@@ -183,10 +183,10 @@ def main():
             try:
                 msg = data[values['-TABLE-'][0]][0]
                 text = sg.popup_get_text(
-                    'Modify command for \'' + msg + '\'', 'Modify command', data[values['-TABLE-'][0]][1]).rstrip()
-                if(text != None and text != ''):
+                    'Modify command for \'' + msg + '\'', 'Modify command', data[values['-TABLE-'][0]][1])
+                if(text != None and text.rstrip() != ''):
                     data.pop(values['-TABLE-'][0])
-                    data.insert(values['-TABLE-'][0], [msg, text])
+                    data.insert(values['-TABLE-'][0], [msg, text.rstrip()])
                     window['-TABLE-'].update(values=data)
                     updateDataDict()
             except IndexError:
