@@ -10,7 +10,7 @@ def init(addr, p):
     port = p
     client = SimpleUDPClient(ip, int(port))  # Create client
 
-def sendOSC(command):
+def send_OSC(command):
     global client
     try:
         client.send_message(command, 0)   # Send float message

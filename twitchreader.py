@@ -1,5 +1,4 @@
 import twitch
-import time
 
 data = {}
 settings = {}
@@ -17,12 +16,12 @@ def init(data_dict, config, win):
                             oauth=settings['twitch']['oauth'],
                             helix= twitch.Helix(settings['twitch']['client-id'], settings['twitch']['client-secret']))
         
-        chat.subscribe(onMessage)
+        chat.subscribe(on_message)
     except KeyError:
         print("Twitch Credentials need to be setup")
 
-def onMessage(message: twitch.chat.Message) -> None:
-    updateChatbox(message.sender, message.text)
+def on_message(message: twitch.chat.Message) -> None:
+    update_chatbox(message.sender, message.text)
 
-def updateChatbox(sender, msg):
+def update_chatbox(sender, msg):
     window.write_event_value('-CHAT-', {'sender': sender, 'msg':msg})
